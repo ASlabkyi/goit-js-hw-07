@@ -35,6 +35,14 @@ function createImgGallery(imgs) {
     .join("");
 }
 
+function checkIfImg(element) {
+  return element.nodeName !== "IMG";
+}
+
+function getUrlData(element) {
+  return element.dataset.source;
+}
+
 function handleOnShow(evt) {
   if (evt.key === "Escape") {
     instance.close();
@@ -59,12 +67,4 @@ function createInstance(urlData) {
 
 function showInstance() {
   instance.show();
-}
-
-function getUrlData(element) {
-  return element.dataset.source;
-}
-
-function checkIfImg(element) {
-  return element.nodeName !== "IMG";
 }
