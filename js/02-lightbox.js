@@ -7,6 +7,14 @@ let lightbox = null;
 galleryListEl.innerHTML = createGalleryList(galleryItems);
 galleryListEl.addEventListener("click", handleImgClick);
 
+function handleImgClick(e) {
+  e.preventDefault();
+
+  if (checkIfImg(e.target)) return;
+
+  createLightbox();
+}
+
 function createGalleryList(element) {
   return element
     .map(
@@ -19,14 +27,6 @@ function createGalleryList(element) {
    `
     )
     .join("");
-}
-
-function handleImgClick(e) {
-  e.preventDefault();
-
-  if (checkIfImg(e.target)) return;
-
-  createLightbox();
 }
 
 function checkIfImg(element) {
