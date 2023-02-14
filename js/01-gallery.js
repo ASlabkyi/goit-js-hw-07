@@ -56,10 +56,10 @@ function createInstance(urlData) {
         `,
     {
       onShow: () => {
-        addEventListener("keypress", handleOnShow);
+        addEventListener("keydown", handleOnShow);
       },
       onClose: () => {
-        removeEventListener("keypress", handleOnShow);
+        removeEventListener("keydown", handleOnShow);
       },
     }
   );
